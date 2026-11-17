@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0b0d12"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<title>Subly — Controle de assinaturas</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0b0d12;--panel:#12151d;--panel2:#171b25;--line:#252a36;--muted:#858da0;--text:#f4f6fb;--accent:#a78bfa;--green:#6ee7b7;--red:#fb7185}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#252044 0,transparent 35%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}
+button,input,select{font:inherit}.app{max-width:1320px;margin:auto;padding:34px 28px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}.brand{display:flex;align-items:center;gap:12px;font:800 23px Manrope}.brandmark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);display:grid;place-items:center;color:#151020;font-size:21px;box-shadow:0 8px 25px #8b5cf655}.top-right{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}.avatar{width:35px;height:35px;border-radius:50%;background:#29233d;color:#d8caff;display:grid;place-items:center;font-weight:700}
+h1{font:800 clamp(27px,4vw,38px) Manrope;margin:0 0 7px;letter-spacing:-1.2px}.sub{color:var(--muted);margin:0 0 28px}.actions{display:flex;gap:10px;align-items:center;margin-bottom:32px}.btn{border:1px solid var(--line);background:#191d28;color:var(--text);padding:11px 16px;border-radius:12px;cursor:pointer;font-weight:600;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:#6d5ba4}.btn.primary{background:linear-gradient(135deg,#a78bfa,#7c3aed);color:#160f27;border:0;box-shadow:0 8px 25px #8b5cf633}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:28px}.stat{background:linear-gradient(145deg,#171b26,#11141b);border:1px solid var(--line);border-radius:18px;padding:20px 22px}.stat-label{font-size:13px;color:var(--muted);margin-bottom:12px}.stat-value{font:800 27px Manrope;letter-spacing:-.7px}.stat-foot{font-size:12px;color:var(--muted);margin-top:7px}.stat-icon{float:right;color:#b9a4ff;background:#28213c;border-radius:10px;padding:8px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:26px 0 15px}.toolbar h2{font:700 18px Manrope;margin:0}.filters{display:flex;gap:9px}.search{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px 13px;outline:none;width:210px}.select{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:linear-gradient(145deg,#171b25,#11141b);border:1px solid var(--line);border-radius:18px;padding:18px;position:relative;transition:.2s;min-width:0}.card:hover{transform:translateY(-3px);border-color:#49405f}.card-head{display:flex;align-items:center;justify-content:space-between}.appicon{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;font-size:27px;font-weight:800;color:white;box-shadow:inset 0 2px 2px #ffffff55,inset 0 -5px 9px #0005,0 9px 18px #0006;transform:perspective(100px) rotateX(3deg);text-shadow:0 2px 4px #0005}.appicon{position:relative;overflow:hidden}.appicon::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 2px 2px #ffffff55,inset 0 -5px 9px #0005;pointer-events:none}.fill{width:100%;height:100%;object-fit:cover;display:block}.picker{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-height:210px;overflow:auto;padding:2px}.tile{position:relative;background:#0f121a;border:1px solid #303646;border-radius:12px;padding:9px 4px 7px;cursor:pointer;text-align:center;color:#cbd1df;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}.tile:hover{border-color:#6d5ba4}.tile.sel{border-color:#9b7cf5;background:#221b38}.tile.up{border-style:dashed}.tile .appicon{width:42px;height:42px;border-radius:13px;font-size:20px;transform:none;box-shadow:0 4px 10px #0006}.tile span{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile .x{position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;border:0;background:#2b3140;color:#fda4af;font-size:12px;line-height:1;cursor:pointer;padding:0}.menu{background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer}.name{font:700 16px Manrope;margin:15px 0 3px}.category{color:var(--muted);font-size:12px}.price-row{display:flex;align-items:baseline;gap:5px;margin:17px 0 14px}.price{font:800 24px Manrope}.period{font-size:12px;color:var(--muted)}.details{border-top:1px solid var(--line);padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.detail-label{font-size:11px;color:var(--muted);margin-bottom:4px}.detail-value{font-size:12px;font-weight:600}.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--green);background:#123128;padding:5px 8px;border-radius:20px}.dot{width:6px;height:6px;border-radius:50%;background:currentColor}.card-actions{display:flex;gap:8px;margin-top:15px}.smallbtn{flex:1;background:#202431;border:1px solid #2b3140;color:#cbd1df;border-radius:9px;padding:8px;font-size:12px;cursor:pointer}.smallbtn:hover{border-color:#8b5cf6}.empty{grid-column:1/-1;text-align:center;padding:55px 20px;border:1px dashed #343949;border-radius:18px;color:var(--muted)}.empty b{display:block;color:var(--text);font:700 17px Manrope;margin-bottom:7px}
+.modal-back{display:none;position:fixed;inset:0;background:#05060acc;backdrop-filter:blur(8px);z-index:10;align-items:center;justify-content:center;padding:18px}.modal-back.open{display:flex}.modal{max-height:92vh;overflow:auto;width:min(480px,100%);background:#171b25;border:1px solid #34394a;border-radius:20px;padding:23px;box-shadow:0 25px 80px #0009}.modal h3{font:800 20px Manrope;margin:0 0 18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#aab1c1}.field input,.field select{background:#0f121a;border:1px solid #303646;color:white;border-radius:10px;padding:11px;outline:none;width:100%}.field input:focus,.field select:focus{border-color:#9b7cf5}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:12px}.delete{color:#fda4af}.foot{color:#666f81;font-size:11px;text-align:center;margin-top:28px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}@keyframes out{to{opacity:0;transform:scale(.88) translateY(8px)}}@keyframes bump{50%{transform:scale(1.07)}}
+.app>*:not(.grid){animation:rise .6s cubic-bezier(.2,.8,.2,1) backwards}.app>:nth-child(2){animation-delay:.07s}.app>:nth-child(3){animation-delay:.14s}.app>:nth-child(4){animation-delay:.21s}
+.grid.anim .card{animation:rise .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*55ms)}.card.pop{animation:pop .5s cubic-bezier(.2,.9,.3,1.25) backwards}.card.out{animation:out .28s ease forwards;pointer-events:none}
+.modal-back.open{animation:fade .22s ease}.modal-back.open .modal{animation:pop .38s cubic-bezier(.2,.9,.3,1.2)}.modal-back.closing{animation:fade .18s ease reverse forwards}.modal-back.closing .modal{animation:out .18s ease forwards}
+.btn,.smallbtn,.tile,.stat{transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}.btn:active,.smallbtn:active,.tile:active{transform:scale(.95)}.smallbtn:hover,.tile:hover{transform:translateY(-2px)}.stat:hover{transform:translateY(-3px);border-color:#49405f}.tile.sel{animation:bump .35s}
+.card .appicon{transition:transform .3s cubic-bezier(.2,.9,.3,1.3)}.card:hover .appicon{transform:perspective(100px) rotateX(3deg) scale(1.08) rotate(-3deg)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.app{padding:22px 15px}.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.search{flex:1;min-width:0}.top-right .date{display:none}.actions .btn:not(.primary){display:none}.formgrid{grid-template-columns:1fr}.picker{grid-template-columns:repeat(4,1fr)}.field.full{grid-column:auto}}
+</style></head>
+<body><main class="app">
+<header class="top"><div class="brand"><div class="brandmark">✳</div>subly</div><div class="top-right"><span class="date" id="today"></span><button class="btn" id="authBtn" style="display:none;padding:8px 13px;font-size:13px" onclick="authClick()">☁ Entrar</button><div class="avatar" id="avatar">S</div></div></header>
+<section><h1>Suas assinaturas, <span style="color:#b9a4ff">sob controle.</span></h1><p class="sub">Tudo o que você assina em um só lugar. Sem surpresas no fim do mês.</p><div class="actions"><button class="btn primary" onclick="openModal()">＋ Adicionar assinatura</button><button class="btn" onclick="exportData()">↓ Exportar dados</button></div></section>
+<section class="stats"><div class="stat"><span class="stat-icon">↗</span><div class="stat-label">Custo mensal</div><div class="stat-value" id="monthly">R$ 0,00</div><div class="stat-foot">Valor equivalente por mês</div></div><div class="stat"><span class="stat-icon">◷</span><div class="stat-label">Custo anual estimado</div><div class="stat-value" id="yearly">R$ 0,00</div><div class="stat-foot">Projeção para os próximos 12 meses</div></div><div class="stat"><span class="stat-icon">▦</span><div class="stat-label">Assinaturas ativas</div><div class="stat-value" id="count">0</div><div class="stat-foot" id="nextdue">Nenhuma cobrança cadastrada</div></div></section>
+<div class="toolbar"><h2>Minhas assinaturas <span id="totalLabel" style="color:#788195;font-weight:500"></span></h2><div class="filters"><input class="search" id="search" placeholder="⌕  Buscar assinatura..." oninput="render()"><select class="select" id="filter" onchange="render(true)"><option value="all">Todas</option><option value="active">Ativas</option><option value="paused">Pausadas</option></select></div></div>
+<section class="grid" id="cards"></section><div class="foot" id="foot">SUBLY • Seus dados ficam salvos neste navegador.</div>
+</main>
+<div class="modal-back" id="modal"><form class="modal" onsubmit="save(event)"><h3 id="modalTitle">Adicionar assinatura</h3><input type="hidden" id="editId"><div class="formgrid">
+<div class="field full"><label>Imagem do serviço (escolha da sua biblioteca ou adicione uma nova)</label><div class="picker" id="picker"></div><input id="logoFile" type="file" accept="image/*" hidden></div>
+<div class="field"><label>Nome do serviço</label><input id="name" required placeholder="Ex.: Spotify"></div>
+<div class="field"><label>Valor (R$)</label><input id="price" type="number" min="0" step=".01" required placeholder="0,00"></div>
+<div class="field"><label>Periodicidade</label><select id="cycle"><option value="monthly">Mensal</option><option value="yearly">Anual</option><option value="weekly">Semanal</option></select></div>
+<div class="field"><label>Próxima cobrança</label><input id="due" type="date" required></div>
+<div class="field"><label>Status</label><select id="status"><option value="active">Ativa</option><option value="paused">Pausada</option></select></div>
+<div class="field"><label>Categoria / observação</label><input id="category" placeholder="Streaming, jogos..."></div>
+</div><div class="modal-actions"><button type="button" class="btn" onclick="closeModal()">Cancelar</button><button class="btn primary" type="submit">Salvar assinatura</button></div></form></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+function datePlus(n){let d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+let items=JSON.parse(localStorage.getItem('subly-items')||'[]'),lib=JSON.parse(localStorage.getItem('subly-icons')||'[]'),pick='';
+// limpeza única: remove as 6 assinaturas de exemplo que vinham prontas (só as que não foram alteradas)
+if(!localStorage.getItem('subly-v2')){const S={'Boosteroid':39.9,'Xbox Game Pass':59.99,'Spotify Premium':21.9,'YouTube Premium':24.9,'Canva Pro':34.9,'Claro celular':59.9};items=items.filter(x=>x.logo||S[x.name]!==x.price);localStorage.setItem('subly-items',JSON.stringify(items));localStorage.setItem('subly-v2','1')}
+/* ===== SINCRONIZAÇÃO ENTRE DISPOSITIVOS (Firebase) =====
+ Preencha FIREBASE_CONFIG com os dados do seu projeto. Vazio = app funciona só neste navegador.
+ Regras do Firestore (aba Regras): rules_version='2';service cloud.firestore{match /databases/{d}/documents{match /users/{uid}/{doc=**}{allow read,write:if request.auth!=null&&request.auth.uid==uid}}} */
+const FIREBASE_CONFIG={apiKey:'',authDomain:'',projectId:'',appId:''};
+let db=null,user=null,unsubs=[],justAdded=0;
+function cloud(col,id,data){if(!db||!user)return;const r=db.collection('users').doc(user.uid).collection(col).doc(String(id));(data?r.set(data):r.delete()).catch(e=>console.error(e))}
+function setAuthUI(){document.getElementById('authBtn').textContent=user?'Sair':'☁ Entrar';document.getElementById('avatar').textContent=user?(user.displayName||user.email||'S')[0].toUpperCase():'S';document.getElementById('foot').textContent='SUBLY • '+(user?'Sincronizado com '+(user.email||'sua conta')+'.':'Seus dados ficam salvos neste navegador.')}
+function authClick(){
+ if(user){if(confirm('Sair? Seus dados continuam salvos na nuvem e voltam quando você entrar de novo.'))firebase.auth().signOut().then(()=>{items=[];lib=[];persist();render()});return}
+ if(location.protocol==='file:'){alert('Para entrar, abra o app pelo endereço hospedado (https://...), e não pelo arquivo no computador.');return}
+ firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>alert('Não foi possível entrar: '+e.message));
+}
+async function startCloud(){
+ const base=db.collection('users').doc(user.uid);
+ try{const r=await base.get();if(!r.exists){const b=db.batch();items.forEach(x=>b.set(base.collection('items').doc(String(x.id)),x));lib.forEach(i=>b.set(base.collection('icons').doc(i.id),i));b.set(base,{init:true});await b.commit()}}catch(e){console.error(e)}
+ unsubs=[base.collection('items').onSnapshot(sn=>{const n=sn.docs.map(d=>d.data()).sort((a,b)=>a.id-b.id);if(JSON.stringify(n)!==JSON.stringify(items)){items=n;persist();render()}},console.error),
+  base.collection('icons').onSnapshot(sn=>{const n=sn.docs.map(d=>d.data()).sort((a,b)=>a.id.localeCompare(b.id));if(JSON.stringify(n)!==JSON.stringify(lib)){lib=n;persist();if(document.getElementById('modal').classList.contains('open'))renderPicker()}},console.error)];
+}
+if(FIREBASE_CONFIG.apiKey&&typeof firebase!=='undefined'){
+ firebase.initializeApp(FIREBASE_CONFIG);db=firebase.firestore();db.enablePersistence({synchronizeTabs:true}).catch(()=>{});
+ document.getElementById('authBtn').style.display='';
+ firebase.auth().onAuthStateChanged(u=>{user=u;setAuthUI();unsubs.forEach(f=>f());unsubs=[];if(u)startCloud()});
+}
+function iconHTML(x){const c=x.color||'#242936';return `<div class="appicon" style="background:linear-gradient(145deg,${c},${shade(c)})">${x.logo?`<img class="fill" alt="Logo ${esc(x.name)}" src="${x.logo}">`:esc((x.name||'?')[0].toUpperCase())}</div>`}
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const monthly=x=>x.cycle==='yearly'?x.price/12:x.cycle==='weekly'?x.price*52/12:x.price;
+function persist(){localStorage.setItem('subly-items',JSON.stringify(items));localStorage.setItem('subly-icons',JSON.stringify(lib))}
+function fmtDate(s){if(!s)return '—';return new Date(s+'T12:00:00').toLocaleDateString('pt-BR')}
+function tween(id,to,fmt){const el=document.getElementById(id),from=Number(el.dataset.v||0),t0=performance.now();el.dataset.v=to;(function f(t){const k=Math.min(1,(t-t0)/600),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)requestAnimationFrame(f)})(t0)}
+function render(anim){
+ const q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('filter').value;
+ const active=items.filter(x=>x.status==='active'),m=active.reduce((a,x)=>a+monthly(x),0);
+ tween('monthly',m,money);tween('yearly',m*12,money);
+ tween('count',active.length,Math.round);document.getElementById('nextdue').textContent=items.length?'Próximas cobranças cadastradas':'Nenhuma cobrança cadastrada';
+ document.getElementById('totalLabel').textContent=`(${items.length})`;
+ const list=items.filter(x=>(f==='all'||x.status===f)&&x.name.toLowerCase().includes(q));
+ document.getElementById('cards').classList.toggle('anim',!!anim);
+ document.getElementById('cards').innerHTML=list.length?list.map((x,i)=>`<article class="card${x.id===justAdded?' pop':''}" data-id="${x.id}" style="--i:${Math.min(i,12)}">
+ <div class="card-head">${iconHTML(x)}<button class="menu" title="Editar" onclick="editItem(${x.id})">···</button></div>
+ <div class="name">${esc(x.name)}</div><div class="category">${esc(x.category||'Assinatura')}</div>
+ <div class="price-row"><span class="price">${money(x.price)}</span><span class="period">/ ${x.cycle==='yearly'?'ano':x.cycle==='weekly'?'semana':'mês'}</span></div>
+ <div class="details"><div><div class="detail-label">Próxima cobrança</div><div class="detail-value">${fmtDate(x.due)}</div></div><div><div class="detail-label">Status</div><span class="status" style="${x.status==='paused'?'color:#fbbf24;background:#3a2b13':''}"><i class="dot"></i>${x.status==='active'?'Ativa':'Pausada'}</span></div></div>
+ <div class="card-actions"><button class="smallbtn" onclick="editItem(${x.id})">Editar</button><button class="smallbtn" onclick="toggleStatus(${x.id})">${x.status==='active'?'Pausar':'Reativar'}</button><button class="smallbtn delete" onclick="removeItem(${x.id})">Excluir</button></div></article>`).join(''):'<div class="empty"><b>Nenhuma assinatura encontrada</b>Adicione uma assinatura ou ajuste sua busca.</div>';
+}
+function shade(hex){let n=parseInt(hex.slice(1),16);return '#'+[16,8,0].map(s=>Math.max(0,((n>>s)&255)-35).toString(16).padStart(2,'0')).join('')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openModal(){document.getElementById('modalTitle').textContent='Adicionar assinatura';document.querySelector('form').reset();document.getElementById('editId').value='';pick='';document.getElementById('due').value=datePlus(30);renderPicker();document.getElementById('modal').classList.add('open')}
+function closeModal(){const m=document.getElementById('modal');m.classList.add('closing');setTimeout(()=>m.classList.remove('open','closing'),180)}
+function editItem(id){let x=items.find(a=>a.id===id);if(!x)return;openModal();document.getElementById('modalTitle').textContent='Editar assinatura';['name','price','cycle','due','status','category'].forEach(k=>document.getElementById(k).value=x[k]??'');document.getElementById('editId').value=id;pick=x.logo||'';renderPicker()}
+function tile(src,name,id){return `<div class="tile${pick===src?' sel':''}" onclick="choose('${id}')">${id&&id!=='cur'?`<button type="button" class="x" title="Remover da biblioteca" onclick="event.stopPropagation();delIcon('${id}')">×</button>`:''}<div class="appicon" style="background:#242936"><img class="fill" alt="" src="${src}"></div><span>${esc(name)}</span></div>`}
+function renderPicker(){
+ const cur=pick&&!lib.some(i=>i.src===pick)?tile(pick,'Atual','cur'):'';
+ document.getElementById('picker').innerHTML=`<div class="tile up" onclick="document.getElementById('logoFile').click()"><div class="appicon" style="background:#242936">＋</div><span>Adicionar imagem</span></div>`+cur+lib.map(i=>tile(i.src,i.name,i.id)).join('');
+}
+function choose(id){if(id==='cur')return;const i=lib.find(a=>a.id===id);if(!i)return;pick=i.src;const n=document.getElementById('name');if(!n.value)n.value=i.name;renderPicker()}
+function delIcon(id){const i=lib.find(a=>a.id===id);if(i&&confirm(`Remover "${i.name}" da biblioteca? As assinaturas que já usam essa imagem continuam com ela.`)){lib=lib.filter(a=>a.id!==id);persist();cloud('icons',id,null);renderPicker()}}
+document.getElementById('logoFile').addEventListener('change',e=>{
+ const f=e.target.files[0];e.target.value='';if(!f)return;
+ const r=new FileReader();r.onerror=()=>alert('Não foi possível ler esse arquivo.');
+ r.onload=()=>{const img=new Image();img.onerror=()=>alert('Não foi possível abrir essa imagem. Tente JPG, PNG ou WEBP.');
+  img.onload=()=>{const s=256,c=document.createElement('canvas');c.width=c.height=s;const m=Math.min(img.width,img.height)||s;c.getContext('2d').drawImage(img,(img.width-m)/2,(img.height-m)/2,m,m,0,0,s,s);
+   const ic={id:'i'+Date.now(),name:f.name.replace(/\.[^.]+$/,''),src:c.toDataURL('image/webp',.9)};
+   try{lib.push(ic);persist()}catch(err){lib.pop();alert('Armazenamento cheio. Remova alguma imagem da biblioteca.');return}
+   cloud('icons',ic.id,ic);pick=ic.src;const n=document.getElementById('name');if(!n.value)n.value=ic.name;renderPicker()};
+  img.src=r.result};
+ r.readAsDataURL(f);
+});
+function save(e){
+ e.preventDefault();
+ let id=Number(document.getElementById('editId').value),old=items.find(a=>a.id===id),x={id:id||Date.now()};
+ ['name','cycle','due','status','category'].forEach(k=>x[k]=document.getElementById(k).value);
+ x.price=Number(document.getElementById('price').value);x.logo=pick;x.color=(old&&old.color)||'#242936';
+ try{if(id)items=items.map(a=>a.id===id?x:a);else{items.push(x);justAdded=x.id;setTimeout(()=>justAdded=0,900)}persist();cloud('items',x.id,x);closeModal();render()}
+ catch(err){alert('Não foi possível salvar. O armazenamento do navegador pode estar cheio. Tente uma imagem menor.')}
+}
+function removeItem(id){let x=items.find(a=>a.id===id);if(x&&confirm(`Excluir ${x.name}? Esta ação não pode ser desfeita.`)){const el=document.querySelector(`.card[data-id="${id}"]`);if(el)el.classList.add('out');setTimeout(()=>{items=items.filter(a=>a.id!==id);persist();cloud('items',id,null);render()},el?260:0)}}
+function toggleStatus(id){items=items.map(x=>x.id===id?{...x,status:x.status==='active'?'paused':'active'}:x);persist();cloud('items',id,items.find(x=>x.id===id));render()}
+function exportData(){let blob=new Blob([JSON.stringify(items,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='minhas-assinaturas.json';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('today').textContent=new Date().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+render(true);
+</script></body></html>
