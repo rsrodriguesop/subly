@@ -8,7 +8,7 @@
 :root{--bg:#0b0d12;--panel:#12151d;--panel2:#171b25;--line:#252a36;--muted:#858da0;--text:#f4f6fb;--accent:#a78bfa;--green:#6ee7b7;--red:#fb7185}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#252044 0,transparent 35%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}
 button,input,select{font:inherit}.app{max-width:1320px;margin:auto;padding:34px 28px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}.brand{display:flex;align-items:center;gap:12px;font:800 23px Manrope}.brandmark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);display:grid;place-items:center;color:#151020;font-size:21px;box-shadow:0 8px 25px #8b5cf655}.top-right{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}.avatar{width:35px;height:35px;border-radius:50%;background:#29233d;color:#d8caff;display:grid;place-items:center;font-weight:700}
-h1{font:800 clamp(27px,4vw,38px) Manrope;margin:0 0 7px;letter-spacing:-1.2px}.sub{color:var(--muted);margin:0 0 28px}.actions{display:flex;gap:10px;align-items:center;margin-bottom:32px}.btn{border:1px solid var(--line);background:#191d28;color:var(--text);padding:11px 16px;border-radius:12px;cursor:pointer;font-weight:600;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:#6d5ba4}.btn.primary{background:linear-gradient(135deg,#a78bfa,#7c3aed);color:#160f27;border:0;box-shadow:0 8px 25px #8b5cf633}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:28px}.stat{background:linear-gradient(145deg,#171b26,#11141b);border:1px solid var(--line);border-radius:18px;padding:20px 22px}.stat-label{font-size:13px;color:var(--muted);margin-bottom:12px}.stat-value{font:800 27px Manrope;letter-spacing:-.7px}.stat-foot{font-size:12px;color:var(--muted);margin-top:7px}.stat-icon{float:right;color:#b9a4ff;background:#28213c;border-radius:10px;padding:8px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:26px 0 15px}.toolbar h2{font:700 18px Manrope;margin:0}.filters{display:flex;gap:9px}.search{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px 13px;outline:none;width:210px}.select{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px}
+h1{font:800 clamp(27px,4vw,38px) Manrope;margin:0 0 7px;letter-spacing:-1.2px}.sub{color:var(--muted);margin:0 0 28px}.actions{display:flex;gap:10px;align-items:center;margin-bottom:32px}.btn{border:1px solid var(--line);background:#191d28;color:var(--text);padding:11px 16px;border-radius:12px;cursor:pointer;font-weight:600;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:#6d5ba4}.btn:disabled{opacity:.6;cursor:wait;transform:none}.btn.primary{background:linear-gradient(135deg,#a78bfa,#7c3aed);color:#160f27;border:0;box-shadow:0 8px 25px #8b5cf633}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:28px}.stat{background:linear-gradient(145deg,#171b26,#11141b);border:1px solid var(--line);border-radius:18px;padding:20px 22px}.stat-label{font-size:13px;color:var(--muted);margin-bottom:12px}.stat-value{font:800 27px Manrope;letter-spacing:-.7px}.stat-foot{font-size:12px;color:var(--muted);margin-top:7px}.stat-icon{float:right;color:#b9a4ff;background:#28213c;border-radius:10px;padding:8px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:26px 0 15px}.toolbar h2{font:700 18px Manrope;margin:0}.filters{display:flex;gap:9px}.search{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px 13px;outline:none;width:210px}.select{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:linear-gradient(145deg,#171b25,#11141b);border:1px solid var(--line);border-radius:18px;padding:18px;position:relative;transition:.2s;min-width:0}.card:hover{transform:translateY(-3px);border-color:#49405f}.card-head{display:flex;align-items:center;justify-content:space-between}.appicon{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;font-size:27px;font-weight:800;color:white;box-shadow:inset 0 2px 2px #ffffff55,inset 0 -5px 9px #0005,0 9px 18px #0006;transform:perspective(100px) rotateX(3deg);text-shadow:0 2px 4px #0005}.appicon{position:relative;overflow:hidden}.appicon::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 2px 2px #ffffff55,inset 0 -5px 9px #0005;pointer-events:none}.fill{width:100%;height:100%;object-fit:cover;display:block}.picker{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-height:210px;overflow:auto;padding:2px}.tile{position:relative;background:#0f121a;border:1px solid #303646;border-radius:12px;padding:9px 4px 7px;cursor:pointer;text-align:center;color:#cbd1df;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}.tile:hover{border-color:#6d5ba4}.tile.sel{border-color:#9b7cf5;background:#221b38}.tile.up{border-style:dashed}.tile .appicon{width:42px;height:42px;border-radius:13px;font-size:20px;transform:none;box-shadow:0 4px 10px #0006}.tile span{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile .x{position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;border:0;background:#2b3140;color:#fda4af;font-size:12px;line-height:1;cursor:pointer;padding:0}.menu{background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer}.name{font:700 16px Manrope;margin:15px 0 3px}.category{color:var(--muted);font-size:12px}.price-row{display:flex;align-items:baseline;gap:5px;margin:17px 0 14px}.price{font:800 24px Manrope}.period{font-size:12px;color:var(--muted)}.details{border-top:1px solid var(--line);padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.detail-label{font-size:11px;color:var(--muted);margin-bottom:4px}.detail-value{font-size:12px;font-weight:600}.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--green);background:#123128;padding:5px 8px;border-radius:20px}.dot{width:6px;height:6px;border-radius:50%;background:currentColor}.card-actions{display:flex;gap:8px;margin-top:15px}.smallbtn{flex:1;background:#202431;border:1px solid #2b3140;color:#cbd1df;border-radius:9px;padding:8px;font-size:12px;cursor:pointer}.smallbtn:hover{border-color:#8b5cf6}.empty{grid-column:1/-1;text-align:center;padding:55px 20px;border:1px dashed #343949;border-radius:18px;color:var(--muted)}.empty b{display:block;color:var(--text);font:700 17px Manrope;margin-bottom:7px}
 .modal-back{display:none;position:fixed;inset:0;background:#05060acc;backdrop-filter:blur(8px);z-index:10;align-items:center;justify-content:center;padding:18px}.modal-back.open{display:flex}.modal{max-height:92vh;overflow:auto;width:min(480px,100%);background:#171b25;border:1px solid #34394a;border-radius:20px;padding:23px;box-shadow:0 25px 80px #0009}.modal h3{font:800 20px Manrope;margin:0 0 18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#aab1c1}.field input,.field select{background:#0f121a;border:1px solid #303646;color:white;border-radius:10px;padding:11px;outline:none;width:100%}.field input:focus,.field select:focus{border-color:#9b7cf5}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:12px}.delete{color:#fda4af}.foot{color:#666f81;font-size:11px;text-align:center;margin-top:28px}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}@keyframes out{to{opacity:0;transform:scale(.88) translateY(8px)}}@keyframes bump{50%{transform:scale(1.07)}}
@@ -18,11 +18,13 @@ h1{font:800 clamp(27px,4vw,38px) Manrope;margin:0 0 7px;letter-spacing:-1.2px}.s
 .btn,.smallbtn,.tile,.stat{transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}.btn:active,.smallbtn:active,.tile:active{transform:scale(.95)}.smallbtn:hover,.tile:hover{transform:translateY(-2px)}.stat:hover{transform:translateY(-3px);border-color:#49405f}.tile.sel{animation:bump .35s}
 .card .appicon{transition:transform .3s cubic-bezier(.2,.9,.3,1.3)}.card:hover .appicon{transform:perspective(100px) rotateX(3deg) scale(1.08) rotate(-3deg)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.app{padding:22px 15px}.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.search{flex:1;min-width:0}.top-right .date{display:none}.actions .btn:not(.primary){display:none}.formgrid{grid-template-columns:1fr}.picker{grid-template-columns:repeat(4,1fr)}.field.full{grid-column:auto}}
-</style></head>
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.app{padding:22px 15px}.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.search{flex:1;min-width:0}.top-right .date{display:none}.actions .btn:not(.primary){display:inline-flex}.formgrid{grid-template-columns:1fr}.picker{grid-template-columns:repeat(4,1fr)}.field.full{grid-column:auto}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
 <body><main class="app">
 <header class="top"><div class="brand"><div class="brandmark">✳</div>subly</div><div class="top-right"><span class="date" id="today"></span><button class="btn" id="authBtn" style="display:none;padding:8px 13px;font-size:13px" onclick="authClick()">☁ Entrar</button><div class="avatar" id="avatar">S</div></div></header>
-<section><h1>Suas assinaturas, <span style="color:#b9a4ff">sob controle.</span></h1><p class="sub">Tudo o que você assina em um só lugar. Sem surpresas no fim do mês.</p><div class="actions"><button class="btn primary" onclick="openModal()">＋ Adicionar assinatura</button><button class="btn" onclick="exportData()">↓ Exportar dados</button></div></section>
+<section><h1>Suas assinaturas, <span style="color:#b9a4ff">sob controle.</span></h1><p class="sub">Tudo o que você assina em um só lugar. Sem surpresas no fim do mês.</p><div class="actions"><button class="btn primary" onclick="openModal()">＋ Adicionar assinatura</button><button class="btn" id="exportBtn" onclick="exportData()">↓ Exportar PDF</button></div></section>
 <section class="stats"><div class="stat"><span class="stat-icon">↗</span><div class="stat-label">Custo mensal</div><div class="stat-value" id="monthly">R$ 0,00</div><div class="stat-foot">Valor equivalente por mês</div></div><div class="stat"><span class="stat-icon">◷</span><div class="stat-label">Custo anual estimado</div><div class="stat-value" id="yearly">R$ 0,00</div><div class="stat-foot">Projeção para os próximos 12 meses</div></div><div class="stat"><span class="stat-icon">▦</span><div class="stat-label">Assinaturas ativas</div><div class="stat-value" id="count">0</div><div class="stat-foot" id="nextdue">Nenhuma cobrança cadastrada</div></div></section>
 <div class="toolbar"><h2>Minhas assinaturas <span id="totalLabel" style="color:#788195;font-weight:500"></span></h2><div class="filters"><input class="search" id="search" placeholder="⌕  Buscar assinatura..." oninput="render()"><select class="select" id="filter" onchange="render(true)"><option value="all">Todas</option><option value="active">Ativas</option><option value="paused">Pausadas</option></select></div></div>
 <section class="grid" id="cards"></section><div class="foot" id="foot">SUBLY • Seus dados ficam salvos neste navegador.</div>
@@ -40,11 +42,8 @@ h1{font:800 clamp(27px,4vw,38px) Manrope;margin:0 0 7px;letter-spacing:-1.2px}.s
 <script>
 function datePlus(n){let d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
 let items=JSON.parse(localStorage.getItem('subly-items')||'[]'),lib=JSON.parse(localStorage.getItem('subly-icons')||'[]'),pick='';
-// limpeza única: remove as 6 assinaturas de exemplo que vinham prontas (só as que não foram alteradas)
 if(!localStorage.getItem('subly-v2')){const S={'Boosteroid':39.9,'Xbox Game Pass':59.99,'Spotify Premium':21.9,'YouTube Premium':24.9,'Canva Pro':34.9,'Claro celular':59.9};items=items.filter(x=>x.logo||S[x.name]!==x.price);localStorage.setItem('subly-items',JSON.stringify(items));localStorage.setItem('subly-v2','1')}
-/* ===== SINCRONIZAÇÃO ENTRE DISPOSITIVOS (Firebase) =====
- Preencha FIREBASE_CONFIG com os dados do seu projeto. Vazio = app funciona só neste navegador.
- Regras do Firestore (aba Regras): rules_version='2';service cloud.firestore{match /databases/{d}/documents{match /users/{uid}/{doc=**}{allow read,write:if request.auth!=null&&request.auth.uid==uid}}} */
+
 const FIREBASE_CONFIG={apiKey:'',authDomain:'',projectId:'',appId:''};
 let db=null,user=null,unsubs=[],justAdded=0;
 function cloud(col,id,data){if(!db||!user)return;const r=db.collection('users').doc(user.uid).collection(col).doc(String(id));(data?r.set(data):r.delete()).catch(e=>console.error(e))}
@@ -119,7 +118,169 @@ function save(e){
 }
 function removeItem(id){let x=items.find(a=>a.id===id);if(x&&confirm(`Excluir ${x.name}? Esta ação não pode ser desfeita.`)){const el=document.querySelector(`.card[data-id="${id}"]`);if(el)el.classList.add('out');setTimeout(()=>{items=items.filter(a=>a.id!==id);persist();cloud('items',id,null);render()},el?260:0)}}
 function toggleStatus(id){items=items.map(x=>x.id===id?{...x,status:x.status==='active'?'paused':'active'}:x);persist();cloud('items',id,items.find(x=>x.id===id));render()}
-function exportData(){let blob=new Blob([JSON.stringify(items,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='minhas-assinaturas.json';a.click();URL.revokeObjectURL(a.href)}
+
+/* ===== EXPORTAÇÃO REAL DE PDF PROFISSIONAL (SEM CORTES) ===== */
+async function exportData(){
+ if(!items.length){
+  alert('Adicione pelo menos uma assinatura antes de gerar o relatório em PDF.');
+  return;
+ }
+
+ const btn=document.getElementById('exportBtn');
+ const origText=btn.textContent;
+ btn.disabled=true;
+ btn.textContent='⏳ Gerando PDF...';
+
+ try{
+  const activeItems=items.filter(x=>x.status==='active');
+  const pausedItems=items.filter(x=>x.status==='paused');
+  const totalMonthly=activeItems.reduce((acc,x)=>acc+monthly(x),0);
+  const totalYearly=totalMonthly*12;
+
+  const now=new Date();
+  const dateStr=now.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+  const timeStr=now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+
+  // Gera código único de autenticidade
+  const hashBase=items.map(x=>x.name+x.price).join('|')+now.getTime();
+  let hash=0;
+  for(let i=0;i<hashBase.length;i++){hash=((hash<<5)-hash)+hashBase.charCodeAt(i);hash|=0;}
+  const docCode=`SBL-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}-${Math.abs(hash).toString(36).toUpperCase().padStart(6,'0').slice(0,6)}`;
+
+  const cycleLabel={monthly:'Mensal',yearly:'Anual',weekly:'Semanal'};
+
+  // Monta as linhas da tabela
+  const rowsHTML=items.map((x,idx)=>{
+   const isPaused=x.status==='paused';
+   const bgRow=idx%2===0?'#ffffff':'#f8fafc';
+   const avatarHTML=x.logo
+    ? `<img src="${x.logo}" style="width:28px;height:28px;border-radius:7px;object-fit:cover;display:block;border:1px solid #e2e8f0;flex-shrink:0;">`
+    : `<div style="width:28px;height:28px;border-radius:7px;background:${x.color||'#1e293b'};color:#ffffff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${esc((x.name||'?')[0].toUpperCase())}</div>`;
+
+   return `
+    <tr style="background:${bgRow};border-bottom:1px solid #e2e8f0;page-break-inside:avoid;">
+     <td style="padding:10px 12px;">
+      <div style="display:flex;align-items:center;gap:9px;">
+       ${avatarHTML}
+       <div>
+        <div style="font-weight:700;color:#0f172a;font-size:12px;line-height:1.2;">${esc(x.name)}</div>
+        <div style="font-size:10px;color:#64748b;margin-top:2px;">${esc(x.category||'Assinatura digital')}</div>
+       </div>
+      </div>
+     </td>
+     <td style="padding:10px 8px;font-size:11px;color:#334155;">${cycleLabel[x.cycle]||'Mensal'}</td>
+     <td style="padding:10px 8px;font-size:11px;color:#334155;">${fmtDate(x.due)}</td>
+     <td style="padding:10px 8px;">
+      <span style="display:inline-block;padding:3px 8px;border-radius:99px;font-size:9.5px;font-weight:700;${isPaused?'background:#fef3c7;color:#b45309;':'background:#dcfce7;color:#15803d;'}">
+       ${isPaused?'PAUSADA':'ATIVA'}
+      </span>
+     </td>
+     <td style="padding:10px 12px;text-align:right;font-weight:700;font-size:12px;color:${isPaused?'#94a3b8':'#0f172a'};white-space:nowrap;">
+      ${money(x.price)}
+      ${x.cycle!=='monthly'?`<div style="font-size:9px;font-weight:500;color:#64748b;">≈ ${money(monthly(x))}/mês</div>`:''}
+     </td>
+    </tr>`;
+  }).join('');
+
+  // Monta no DOM de forma visível fora da tela para evitar bug de largura/corte do html2canvas
+  const host=document.createElement('div');
+  host.style.cssText='position:fixed;left:-10000px;top:0;width:720px;background:#ffffff;z-index:-1;';
+  host.innerHTML=`
+   <div id="subly-pdf-doc" style="width:720px;background:#ffffff;color:#0f172a;font-family:'DM Sans',Helvetica,Arial,sans-serif;padding:32px 36px;box-sizing:border-box;">
+    <!-- Cabeçalho com Logo do Subly e Código -->
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ede9fe;padding-bottom:18px;margin-bottom:22px;">
+     <div style="display:flex;align-items:center;gap:11px;">
+      <div style="width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#a78bfa,#7c3aed);display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:20px;font-weight:800;">✳</div>
+      <div>
+       <div style="font-family:'Manrope',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.8px;color:#0f172a;line-height:1;">subly</div>
+       <div style="font-size:10.5px;color:#64748b;margin-top:3px;">Controle inteligente de assinaturas</div>
+      </div>
+     </div>
+     <div style="text-align:right;">
+      <div style="display:inline-block;background:#f5f3ff;border:1px solid #ddd6fe;color:#6d28d9;font-family:monospace;font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px;letter-spacing:0.5px;">
+       CÓD: ${docCode}
+      </div>
+      <div style="font-size:10px;color:#64748b;margin-top:5px;">Emitido em ${dateStr} às ${timeStr}</div>
+     </div>
+    </div>
+
+    <!-- Título do Relatório -->
+    <div style="margin-bottom:18px;">
+     <h2 style="font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;margin:0 0 3px;color:#0f172a;">Extrato Consolidado de Assinaturas</h2>
+     <p style="margin:0;font-size:11.5px;color:#64748b;">Resumo financeiro de serviços recorrentes cadastrados${user&&user.email?` • Conta: ${esc(user.email)}`:''}</p>
+    </div>
+
+    <!-- Cards de Resumo Financeiro -->
+    <div style="display:flex;gap:12px;margin-bottom:22px;">
+     <div style="flex:1;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:12px;padding:14px 16px;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6d28d9;margin-bottom:5px;">Custo Mensal Ativo</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#1e1b4b;">${money(totalMonthly)}</div>
+      <div style="font-size:10px;color:#64748b;margin-top:3px;">Equivalente recorrente / mês</div>
+     </div>
+     <div style="flex:1;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#475569;margin-bottom:5px;">Projeção Anual (12m)</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#0f172a;">${money(totalYearly)}</div>
+      <div style="font-size:10px;color:#64748b;margin-top:3px;">Estimativa acumulada em 1 ano</div>
+     </div>
+     <div style="flex:1;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#475569;margin-bottom:5px;">Serviços Cadastrados</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#0f172a;">${activeItems.length} <span style="font-size:12px;font-weight:600;color:#15803d;">ativas</span></div>
+      <div style="font-size:10px;color:#64748b;margin-top:3px;">${pausedItems.length} pausada(s) • ${items.length} no total</div>
+     </div>
+    </div>
+
+    <!-- Tabela Detalhada -->
+    <table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-bottom:20px;">
+     <thead>
+      <tr style="background:#0f172a;color:#ffffff;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">
+       <th style="padding:10px 12px;">Serviço</th>
+       <th style="padding:10px 8px;">Ciclo</th>
+       <th style="padding:10px 8px;">Próx. Cobrança</th>
+       <th style="padding:10px 8px;">Status</th>
+       <th style="padding:10px 12px;text-align:right;">Valor</th>
+      </tr>
+     </thead>
+     <tbody>
+      ${rowsHTML}
+     </tbody>
+     <tfoot>
+      <tr style="background:#f5f3ff;border-top:2px solid #c4b5fd;">
+       <td colspan="4" style="padding:12px;font-weight:800;font-size:12px;color:#1e1b4b;">TOTAL MENSAL (ASSINATURAS ATIVAS)</td>
+       <td style="padding:12px;text-align:right;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#6d28d9;white-space:nowrap;">${money(totalMonthly)}</td>
+      </tr>
+     </tfoot>
+    </table>
+
+    <!-- Rodapé de Verificação -->
+    <div style="border-top:1px solid #e2e8f0;padding-top:12px;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:#94a3b8;">
+     <div>Documento gerado automaticamente pelo <strong>Subly</strong> • Controle de Assinaturas</div>
+     <div>Código de verificação: <strong style="color:#475569;font-family:monospace;">${docCode}</strong></div>
+    </div>
+   </div>
+  `;
+
+  document.body.appendChild(host);
+  const target=document.getElementById('subly-pdf-doc');
+
+  const opt={
+   margin:[10,10,10,10],
+   filename:`Subly-Assinaturas-${docCode}.pdf`,
+   image:{type:'jpeg',quality:0.98},
+   html2canvas:{scale:2,useCORS:true,logging:false,scrollX:0,scrollY:0},
+   jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
+  };
+
+  await html2pdf().set(opt).from(target).save();
+  document.body.removeChild(host);
+ }catch(err){
+  console.error(err);
+  alert('Ocorreu um erro ao gerar o PDF. Tente novamente.');
+ }finally{
+  btn.disabled=false;
+  btn.textContent=origText;
+ }
+}
+
 document.getElementById('today').textContent=new Date().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
 document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
 render(true);
